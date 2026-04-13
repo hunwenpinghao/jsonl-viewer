@@ -1,0 +1,4 @@
+#!/bin/bash
+cd "/Users/aibee/.openclaw/workspace/jsonl-viewer"
+source venv/bin/activate
+exec python app.py "$@"
