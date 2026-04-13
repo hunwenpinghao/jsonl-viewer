@@ -9,7 +9,7 @@
 
 ### 直接下载（推荐）
 
-1. 下载最新版本：[JSONL查看器-v1.0.dmg](../../releases/download/v1.0/JSONL查看器-v1.0.dmg)
+1. 下载最新版本：[JSONL.-v1.0.dmg](../../releases/download/v1.0/JSONL.-v1.0.dmg)
 2. 打开 DMG 文件
 3. 将 `JSONL查看器.app` 拖拽 **应用程序** 文件夹
 4. 双击运行
