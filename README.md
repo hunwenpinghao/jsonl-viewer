@@ -2,9 +2,19 @@
 
 一个简洁优雅的 macOS 桌面应用，用于查看和浏览 JSONL（JSON Lines）文件。
 
-![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)
 ![Platform](https://img.shields.io/badge/Platform-macOS-lightgrey.svg)
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
+
+## 下载安装
+
+### 直接下载（推荐）
+
+1. 下载最新版本：[JSONL查看器-v1.0.zip](../../releases/download/v1.0/JSONL查看器-v1.0.zip)
+2. 解压 ZIP 文件
+3. 将 `JSONL查看器.app` 拖到 **应用程序** 文件夹
+4. 双击运行
+
+> **注意**：首次运行可能提示「无法打开」，前往 **系统设置 > 隐私与安全性** 点击「仍要打开」即可。
 
 ## 功能特性
 
@@ -16,36 +26,6 @@
 - 🔢 **快速跳转** - 输入序号直接跳转到指定记录
 - 📋 **字段列表** - 左侧显示当前记录的所有字段名
 - 🎨 **深色主题** - 优雅的深色界面，护眼舒适
-
-## 安装运行
-
-### 环境要求
-
-- macOS 10.14+
-- Python 3.8+
-
-### 安装依赖
-
-```bash
-# 克隆仓库
-git clone https://github.com/yourusername/jsonl-viewer.git
-cd jsonl-viewer
-
-# 创建虚拟环境
-python3 -m venv venv
-source venv/bin/activate
-
-# 安装依赖
-pip install pywebview
-```
-
-### 运行应用
-
-```bash
-python app.py
-```
-
-或者双击桌面上的 `JSONL查看器.app`（如果已创建）
 
 ## 使用说明
 
@@ -80,38 +60,56 @@ JSONL（JSON Lines）是一种每行一个独立 JSON 对象的文本格式：
 
 每行必须是一个合法的 JSON 对象，行与行之间用换行符分隔。
 
-## 项目结构
+## 开发者说明
+
+### 源码运行
+
+如需从源码运行或二次开发：
+
+**环境要求**
+- macOS 10.14+
+- Python 3.8+
+
+**安装依赖**
+```bash
+git clone https://github.com/hunwenpinghao/jsonl-viewer.git
+cd jsonl-viewer
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
+
+**运行**
+```bash
+python app.py
+```
+
+**打包应用**
+```bash
+pip install py2app
+python setup.py py2app
+# 打包后的应用在 dist/ 目录
+```
+
+### 项目结构
 
 ```
 jsonl-viewer/
 ├── app.py              # 主程序
+├── setup.py            # 打包配置
 ├── README.md           # 项目说明
 ├── requirements.txt    # 依赖列表
+├── build_app.sh        # 打包脚本
 ├── icon.png            # 应用图标
-├── AppIcon.icns        # macOS 图标集
-└── venv/               # 虚拟环境（本地使用）
+└── AppIcon.icns        # macOS 图标集
 ```
 
-## 打包应用（可选）
-
-使用 py2app 打包成独立的 Mac 应用：
-
-```bash
-# 安装 py2app
-pip install py2app
-
-# 打包
-python setup.py py2app
-
-# 打包后的应用在 dist/ 目录中
-```
-
-## 技术栈
+### 技术栈
 
 - **Python 3** - 后端逻辑
 - **pywebview** - 桌面应用框架
 - **HTML/CSS/JS** - 前端界面
-- **Tkinter** - 文件对话框（备选）
+- **py2app** - 打包工具
 
 ## 许可证
 
